@@ -18,6 +18,8 @@ using osuTK;
 using osuTK.Graphics;
 using osu.Game.Rulesets.Diva.Configuration;
 using osu.Framework.Bindables;
+using osu.Game.Rulesets.Diva.Judgements;
+using osu.Game.Rulesets.Judgements;
 
 namespace osu.Game.Rulesets.Diva.Objects.Drawables
 {
@@ -38,6 +40,8 @@ namespace osu.Game.Rulesets.Diva.Objects.Drawables
 
         private BindableBool useXB = new BindableBool(false);
         private BindableBool enableVisualBursts = new BindableBool(true);
+        
+        protected override JudgementResult CreateResult(Judgement judgement) => new DivaJudgementResult(HitObject, judgement);
 
         public DrawableDivaHitObject(DivaHitObject hitObject)
             : base(hitObject)

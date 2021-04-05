@@ -19,6 +19,8 @@ using osu.Game.Rulesets.Diva.UI;
 using osu.Game.Rulesets.Diva.Configuration;
 using osu.Game.Overlays.Settings;
 using osu.Game.Beatmaps.Legacy;
+using osu.Game.Rulesets.Diva.Scoring;
+using osu.Game.Rulesets.Scoring;
 
 namespace osu.Game.Rulesets.Diva
 {
@@ -26,6 +28,8 @@ namespace osu.Game.Rulesets.Diva
     {
         public override string Description => "osu!DIVA";
 
+        public override ScoreProcessor CreateScoreProcessor() => new DivaScoreProcessor();
+        
         public override DrawableRuleset CreateDrawableRulesetWith(IBeatmap beatmap, IReadOnlyList<Mod> mods = null) =>
             new DrawableDivaRuleset(this, beatmap, mods);
 
