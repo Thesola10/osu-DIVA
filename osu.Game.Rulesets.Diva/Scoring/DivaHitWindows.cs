@@ -10,7 +10,7 @@ namespace osu.Game.Rulesets.Diva.Scoring
             new(HitResult.Perfect, 80, 50, 20),
             new(HitResult.Great, 140, 100, 60),
             new(HitResult.Meh, 200, 150, 100),
-            new(HitResult.Miss, 300, 350, 400),
+            new(HitResult.Miss, 400, 400, 400),
         };
 
         public override bool IsHitResultAllowed(HitResult result) =>
